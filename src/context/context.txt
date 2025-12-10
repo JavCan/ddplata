@@ -1,0 +1,382 @@
+# 📱 Instrucciones para Ejecutar el Portafolio Localmente
+
+## 📋 Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado en tu sistema:
+
+- **Node.js** (versión 18 o superior) - [Descargar aquí](https://nodejs.org/)
+- **npm** o **yarn** (npm viene incluido con Node.js)
+- Un editor de código (recomendado: VS Code)
+
+Para verificar que tienes Node.js instalado, ejecuta en tu terminal:
+```bash
+node --version
+npm --version
+```
+
+---
+
+## 🚀 Pasos de Instalación
+
+### 1. Descarga el Proyecto
+
+Descarga todos los archivos del proyecto y colócalos en una carpeta local. La estructura debe verse así:
+
+```
+tu-proyecto/
+├── App.tsx
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Hero.tsx
+│   ├── HomePage.tsx
+│   ├── Projects.tsx
+│   ├── ProjectDetail.tsx
+│   ├── figma/
+│   │   └── ImageWithFallback.tsx
+│   └── ui/
+├── data/
+│   └── projectDetails.ts
+├── styles/
+│   └── globals.css
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── postcss.config.js (si existe)
+```
+
+### 2. Crear los Archivos de Configuración Necesarios
+
+**IMPORTANTE**: Este proyecto fue creado en Figma Make, que utiliza Tailwind CSS v4. Si vas a ejecutarlo localmente, necesitas crear los siguientes archivos:
+
+#### A. Archivo `package.json`
+
+Crea un archivo `package.json` en la raíz del proyecto con este contenido:
+
+```json
+{
+  "name": "portafolio-diseno-industrial",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "lucide-react": "^0.462.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1",
+    "tailwindcss": "^4.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49"
+  }
+}
+```
+
+#### B. Archivo `vite.config.ts`
+
+Crea un archivo `vite.config.ts` en la raíz:
+
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true
+  }
+});
+```
+
+#### C. Archivo `tsconfig.json`
+
+Crea un archivo `tsconfig.json` en la raíz:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+#### D. Archivo `tsconfig.node.json`
+
+Crea un archivo `tsconfig.node.json` en la raíz:
+
+```json
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+```
+
+#### E. Archivo `index.html`
+
+Crea un archivo `index.html` en la raíz:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana Martínez - Diseño Industrial</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
+```
+
+#### F. Archivo `main.tsx`
+
+Crea un archivo `main.tsx` en la raíz:
+
+```typescript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './styles/globals.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+### 3. Instalar las Dependencias
+
+Abre una terminal en la carpeta raíz del proyecto y ejecuta:
+
+```bash
+npm install
+```
+
+Este comando instalará todas las dependencias necesarias (React, Vite, Tailwind CSS, Lucide React, etc.).
+
+**Tiempo estimado**: 1-3 minutos dependiendo de tu conexión a internet.
+
+---
+
+## ▶️ Ejecutar el Proyecto
+
+Una vez instaladas las dependencias, ejecuta:
+
+```bash
+npm run dev
+```
+
+Deberías ver algo como esto en la terminal:
+
+```
+  VITE v6.0.1  ready in 500 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+El proyecto se abrirá automáticamente en tu navegador en `http://localhost:3000/`
+
+---
+
+## 🎨 Consideraciones Importantes para que se Vea Igual
+
+### 1. **Tailwind CSS v4**
+
+Este proyecto utiliza **Tailwind CSS v4**, que tiene una configuración diferente a las versiones anteriores. Los estilos están centralizados en `/styles/globals.css` utilizando la directiva `@theme inline`.
+
+**NO necesitas crear** un archivo `tailwind.config.js` separado, ya que Tailwind v4 lo maneja automáticamente desde `globals.css`.
+
+### 2. **Variables CSS Personalizadas**
+
+Los colores y estilos están definidos como variables CSS en `globals.css`. Si tu IDE no muestra los colores correctamente al inicio, ejecuta `npm run dev` y deberían cargarse.
+
+### 3. **Imágenes**
+
+Si el proyecto incluye imágenes de Unsplash o assets externos, asegúrate de que:
+- Tu conexión a internet esté activa (las imágenes de Unsplash se cargan desde URLs externas)
+- Si hay imágenes locales, estén en la carpeta correcta
+
+### 4. **Vista Móvil**
+
+El diseño está optimizado para **dispositivos móviles**. Para verlo correctamente:
+
+1. Abre las **DevTools** de tu navegador (F12 o clic derecho → Inspeccionar)
+2. Activa el **modo responsive** (icono de dispositivos móviles o Ctrl+Shift+M)
+3. Selecciona un dispositivo móvil (iPhone, Samsung, etc.) o configura el ancho a 375px
+
+### 5. **Extensiones Recomendadas para VS Code**
+
+Para una mejor experiencia de desarrollo, instala estas extensiones:
+
+- **ES7+ React/Redux/React-Native snippets**
+- **Tailwind CSS IntelliSense** (para autocompletado de clases)
+- **PostCSS Language Support**
+- **TypeScript Vue Plugin (Volar)**
+
+---
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: Los estilos de Tailwind no se aplican
+
+**Solución**:
+1. Verifica que `globals.css` esté importado en `main.tsx`
+2. Reinicia el servidor de desarrollo (Ctrl+C y luego `npm run dev`)
+3. Borra la caché del navegador (Ctrl+Shift+R)
+4. Verifica que PostCSS esté instalado: `npm install -D postcss autoprefixer`
+
+### Problema: Error de importación de módulos
+
+**Solución**:
+```bash
+# Borra la carpeta node_modules y package-lock.json
+rm -rf node_modules package-lock.json
+
+# Reinstala las dependencias
+npm install
+```
+
+### Problema: El puerto 3000 está en uso
+
+**Solución**:
+Cambia el puerto en `vite.config.ts` a otro número (ej: 3001, 3002)
+
+### Problema: Errores de TypeScript
+
+**Solución**:
+Asegúrate de que los archivos `tsconfig.json` y `tsconfig.node.json` estén correctamente creados.
+
+---
+
+## 📦 Compilar para Producción
+
+Cuando quieras generar los archivos finales para publicar tu portafolio:
+
+```bash
+npm run build
+```
+
+Los archivos optimizados se generarán en la carpeta `/dist`. Puedes subirlos a cualquier servicio de hosting (Netlify, Vercel, GitHub Pages, etc.).
+
+Para previsualizar la versión de producción localmente:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📝 Resumen de Comandos
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Compilar para producción
+npm run build
+
+# Previsualizar versión de producción
+npm run preview
+```
+
+---
+
+## 🎯 Estructura Final del Proyecto
+
+```
+tu-proyecto/
+├── node_modules/           (generado después de npm install)
+├── dist/                   (generado después de npm run build)
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Hero.tsx
+│   ├── HomePage.tsx
+│   ├── Projects.tsx
+│   ├── ProjectDetail.tsx
+│   ├── figma/
+│   │   └── ImageWithFallback.tsx
+│   └── ui/
+├── data/
+│   └── projectDetails.ts
+├── styles/
+│   └── globals.css
+├── App.tsx
+├── main.tsx
+├── index.html
+├── package.json
+├── package-lock.json       (generado después de npm install)
+├── vite.config.ts
+├── tsconfig.json
+├── tsconfig.node.json
+└── INSTRUCCIONES_INSTALACION.md (este archivo)
+```
+
+---
+
+## ✅ Checklist de Verificación
+
+- [ ] Node.js y npm instalados
+- [ ] Todos los archivos del proyecto descargados
+- [ ] Archivos de configuración creados (package.json, vite.config.ts, etc.)
+- [ ] `npm install` ejecutado sin errores
+- [ ] `npm run dev` ejecutado y proyecto abierto en navegador
+- [ ] DevTools abiertos en modo responsive para ver diseño móvil
+- [ ] Los estilos se ven correctamente
+
+---
+
+## 🆘 Soporte
+
+Si encuentras algún problema, verifica:
+1. Que Node.js esté actualizado (v18+)
+2. Que todos los archivos de configuración estén creados correctamente
+3. Que la carpeta `node_modules` se haya generado
+4. Que no haya errores en la terminal
+
+---
+
+¡Listo! Ahora deberías tener tu portafolio de diseño industrial ejecutándose localmente con todos los estilos aplicados correctamente. 🎨✨
