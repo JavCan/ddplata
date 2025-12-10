@@ -12,6 +12,8 @@ export function ProjectDetail() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -31,21 +33,50 @@ export function ProjectDetail() {
 
   const project = projectDetails.find(p => p.id === Number(id));
 
-   const handleSubmit = (e: React.FormEvent) => {
+   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const newErrors: { name?: string; email?: string } = {};
+    if (!name) newErrors.name = 'El nombre es obligatorio';
+    const emailRegex = /^[\w.!#$%&’*+/=?^_`{|}~-]+@[\w-]+\.[\w.-]+$/i;
+    if (!email) newErrors.email = 'El correo es obligatorio';
+    else if (!emailRegex.test(email)) newErrors.email = 'Correo inválido';
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
     setIsSubmitting(true);
-    
-    // Simular envío del formulario
-    setTimeout(() => {
+    const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3001';
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    try {
+      const res = await fetch(`${API_BASE}/send-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, projectId: project?.id, projectTitle: project?.title }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (!res.ok) {
+        let msg = 'Error al enviar la solicitud';
+        try {
+          const data = await res.json();
+          if (data?.error) msg = data.error;
+        } catch {}
+        setSubmitError(msg);
+        setIsSubmitting(false);
+        return;
+      }
       setIsSubmitted(true);
       setIsSubmitting(false);
       setFormData({ name: '', email: '' });
-      
-      // Resetear mensaje de confirmación después de 5 segundos
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1000);
+      setTimeout(() => { setIsSubmitted(false); }, 5000);
+    } catch (err: any) {
+      clearTimeout(timeoutId);
+      if (err?.name === 'AbortError') setSubmitError('Tiempo de espera agotado');
+      else setSubmitError('No se pudo conectar con el servidor');
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -147,8 +178,13 @@ export function ProjectDetail() {
                     onChange={handleChange}
                     placeholder="Nombre completo"
                     required
-                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-500 transition-colors"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby="name-error"
+                    className={`w-full px-4 py-3 bg-white border text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${errors.name ? 'border-red-500 focus:border-red-600' : 'border-neutral-300 focus:border-neutral-500'}`}
                   />
+                  {errors.name && (
+                    <p id="name-error" className="mt-2 text-sm text-red-600">{errors.name}</p>
+                  )}
                 </div>
                 <div>
                   <input
@@ -158,9 +194,17 @@ export function ProjectDetail() {
                     onChange={handleChange}
                     placeholder="Correo electrónico"
                     required
-                    className="w-full px-4 py-3 bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-500 transition-colors"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby="email-error"
+                    className={`w-full px-4 py-3 bg-white border text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${errors.email ? 'border-red-500 focus:border-red-600' : 'border-neutral-300 focus:border-neutral-500'}`}
                   />
+                  {errors.email && (
+                    <p id="email-error" className="mt-2 text-sm text-red-600">{errors.email}</p>
+                  )}
                 </div>
+                {submitError && (
+                  <p className="mb-3 text-sm text-red-600">{submitError}</p>
+                )}
                 <button
                   type="submit"
                   disabled={isSubmitting}
