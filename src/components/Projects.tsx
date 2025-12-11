@@ -1,6 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
-import pedirUnDeseo from '../assets/pedir_un_deseo.jpg';
+import pedirUnDeseo from '../assets/pedir_un_deseo.JPG';
 import servilletero from '../assets/servilletero.jpg';
 import libelula from '../assets/libelula.jpg';
 
