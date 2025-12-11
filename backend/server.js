@@ -9,7 +9,7 @@ import { Resend } from 'resend';
 dotenv.config(); 
 
 const app = express();
-const port = 3001; // Asegúrate de que este puerto esté abierto y no sea el de React
+const port = process.env.PORT || 3001; // Asegúrate de que este puerto esté abierto y no sea el de React
 
 // Inicializar Resend
 const resend = new Resend(process.env.RESEND_API_KEY); 
@@ -89,5 +89,5 @@ app.post('/send-email', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor Node.js escuchando en http://localhost:${port}`);
+    console.log(`Servidor Node.js escuchando en puerto: ${port}`);
 });
