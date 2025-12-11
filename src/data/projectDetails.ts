@@ -1,17 +1,17 @@
-import pedirUnDeseo1 from '../../public/assets/pedir_un_deseo1.jpg';
-import pedirUnDeseo2 from '../../public/assets/pedir_un_deseo2.jpg';
-import pedirUnDeseo3 from '../../public/assets/pedir_un_deseo3.jpg';
-import pedirUnDeseo4 from '../../public/assets/pedir_un_deseo4.jpg'; 
-import pedirUnDeseo5 from '../../public/assets/pedir_un_deseo5.jpg';
-import pedirUnDeseo6 from '../../public/assets/pedir_un_deseo6.jpg';
+import pedirUnDeseo1 from '../assets/pedir_un_deseo1.jpg';
+import pedirUnDeseo2 from '../assets/pedir_un_deseo2.jpg';
+import pedirUnDeseo3 from '../assets/pedir_un_deseo3.jpg';
+import pedirUnDeseo4 from '../assets/pedir_un_deseo4.jpg'; 
+import pedirUnDeseo5 from '../assets/pedir_un_deseo5.jpg';
+import pedirUnDeseo6 from '../assets/pedir_un_deseo6.jpg';
 
-import servilletero1 from '../../public/assets/servilletero1.jpeg';
-import servilletero2 from '../../public/assets/servilletero2.jpeg';
-import servilletero3 from '../../public/assets/servilletero3.jpeg';
+import servilletero1 from '../assets/servilletero1.jpeg';
+import servilletero2 from '../assets/servilletero2.jpeg';
+import servilletero3 from '../assets/servilletero3.jpeg';
 
-import libelula1 from '../../public/assets/libelula1.jpg';
-import libelula2 from '../../public/assets/libelula2.jpg';
-import libelula3 from '../../public/assets/libelula3.jpg';
+import libelula1 from '../assets/libelula1.jpg';
+import libelula2 from '../assets/libelula2.jpg';
+import libelula3 from '../assets/libelula3.jpg';
 
 // Definición de tipos para los bloques
 interface ProjectBlock {
