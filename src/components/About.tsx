@@ -6,12 +6,7 @@ export function About() {
           <h2 className="text-neutral-900">Sobre mí</h2>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              Especializada en diseño de producto con enfoque minimalista y sostenible.
-              Mi trabajo se centra en la simplicidad funcional y la honestidad material.
-            </p>
-            <p>
-              Cada proyecto es una exploración de forma, función y fabricación, buscando
-              el equilibrio perfecto entre utilidad y belleza.
+              Estudiante de diseño de producto, con experiencia en biomateriales y conocimiento de herramientas como Illustrator, Rhino 3D, InDesign y Blender.
             </p>
           </div>
         </div>

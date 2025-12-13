@@ -41,7 +41,7 @@ export const projectDetails: ProjectDetail[] = [
     // Estructura con bloques separados
     blocks: [
         {
-            description: 'Primera exploración visual del deseo y la luz mediante formas sencillas y materiales honestos.',
+            description: 'Familia de objetos que parten desde el sentimiento de deseo, tomando como inspiración el momento de soplar las velas en un cumpleaños, creando un ritual para pedir un deseo partiendo desde una vela, un candelabro y un apagador.',
             details: [
                 { image: pedirUnDeseo1 },
                 { image: pedirUnDeseo2 },
@@ -49,7 +49,7 @@ export const projectDetails: ProjectDetail[] = [
             ],
         },
         {
-            description: 'Detalle técnico y conceptual del proceso de diseño y fabricación del objeto.',
+            description: 'Gabinete para almacenar los objetos, elaborado de madera de haya, con un cajón que contiene un cerillo para prender la vela de tu deseo más especial.',
             details: [
                 { image: pedirUnDeseo4 }, // Usar imágenes diferentes si las tienes
                 { image: pedirUnDeseo6  },

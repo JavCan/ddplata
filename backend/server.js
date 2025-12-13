@@ -20,7 +20,7 @@ const SENDER_DOMAIN = process.env.SENDER_DOMAIN;
 
 // Middleware
 // Permitir solicitudes CORS desde tu frontend de React (http://localhost:3000)
-const allowedOrigins = [process.env.FRONTEND_ORIGIN ?? 'http://localhost:5173', 'http://localhost:3000'];
+const allowedOrigins = [process.env.FRONTEND_ORIGIN];
 app.use(cors({ origin: allowedOrigins })); 
 app.use(express.json()); 
 
