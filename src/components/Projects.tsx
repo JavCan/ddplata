@@ -6,6 +6,7 @@ import libelula from '../assets/libelula.jpg';
 
 interface Project {
   id: number;
+  slug: string;
   title: string;
   category: string;
   year: string;
@@ -15,6 +16,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    slug: 'pedir-un-deseo',
     title: 'Pedir Un Deseo',
     category: 'Producto',
     year: '2025',
@@ -22,6 +24,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    slug: 'amanecer',
     title: 'Amanecer',
     category: 'Producto',
     year: '2024',
@@ -29,6 +32,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    slug: 'seres-mutantes',
     title: 'Seres Mutantes',
     category: 'Producto',
     year: '2023',

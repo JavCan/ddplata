@@ -23,6 +23,7 @@ interface ProjectBlock {
 
 export interface ProjectDetail {
     id: number;
+    slug: string;
     title: string;
     category: string;
     year: string;
@@ -35,6 +36,7 @@ export interface ProjectDetail {
 export const projectDetails: ProjectDetail[] = [
   {
     id: 1,
+    slug: 'pedir-un-deseo',
     title: 'Pedir Un Deseo',
     category: 'Producto',
     year: '2025',
@@ -61,6 +63,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 2,
+    slug: 'amanecer',
     title: 'Amanecer',
     category: 'Producto',
     year: '2024',
@@ -78,6 +81,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 3,
+    slug: 'seres-mutantes',
     title: 'Seres Mutantes',
     category: 'Producto',
     year: '2024',

@@ -7,7 +7,7 @@ import { ImageModal } from './ImageModal';
 import { ProjectDetailBlock } from './ProjectDetailBlock'; 
 
 export function ProjectDetail() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -31,7 +31,7 @@ export function ProjectDetail() {
     setSelectedImageSrc(null);
   };
 
-  const project = projectDetails.find(p => p.id === Number(id));
+  const project = projectDetails.find(p => p.slug === slug);
 
    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
