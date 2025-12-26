@@ -47,7 +47,7 @@ export function Projects() {
         <h2 className="text-neutral-900 mb-8">Proyectos</h2>
         <div className="space-y-10">
           {projects.map((project) => (
-            <Link to={`/project/${project.id}`} key={project.id} className="group block cursor-pointer">
+            <Link to={`/project/${project.slug}`} key={project.slug} className="group block cursor-pointer">
               <div className="relative aspect-auto bg-neutral-200 overflow-hidden mb-4">
                 <ImageWithFallback
                   src={project.image}
