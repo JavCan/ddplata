@@ -1,19 +1,19 @@
-import pedirUnDeseo1 from '../assets/pedir_un_deseo1.JPG';
-import pedirUnDeseo2 from '../assets/pedir_un_deseo2.JPG';
-import pedirUnDeseo3 from '../assets/pedir_un_deseo3.JPG';
-import pedirUnDeseo4 from '../assets/pedir_un_deseo4.JPG'; 
-import pedirUnDeseo5 from '../assets/pedir_un_deseo5.JPG';
-import pedirUnDeseo6 from '../assets/pedir_un_deseo6.JPG';
+import pedirUnDeseo1 from '../assets/pedir_un_deseo1.webp';
+import pedirUnDeseo2 from '../assets/pedir_un_deseo2.webp';
+import pedirUnDeseo3 from '../assets/pedir_un_deseo3.webp';
+import pedirUnDeseo4 from '../assets/pedir_un_deseo4.webp'; 
+import pedirUnDeseo5 from '../assets/pedir_un_deseo5.webp';
+import pedirUnDeseo6 from '../assets/pedir_un_deseo6.webp';
 
 // Corregido: Ruta a '../assets/' y extensión a .JPEG (Mayúsculas)
-import servilletero1 from '../assets/servilletero1.JPEG';
-import servilletero2 from '../assets/servilletero2.JPEG';
-import servilletero3 from '../assets/servilletero3.JPEG';
+import servilletero1 from '../assets/servilletero1.webp';
+import servilletero2 from '../assets/servilletero2.webp';
+import servilletero3 from '../assets/servilletero3.webp';
 
 // Corregido: Rutas a '../assets/'. Se mantienen las extensiones exactas del repo.
-import libelula1 from '../assets/libelula1.JPG';
-import libelula2 from '../assets/libelula2.jpg';
-import libelula3 from '../assets/libelula3.JPG';
+import libelula1 from '../assets/libelula1.webp';
+import libelula2 from '../assets/libelula2.webp';
+import libelula3 from '../assets/libelula3.webp';
 
 // Definición de tipos para los bloques
 interface ProjectBlock {

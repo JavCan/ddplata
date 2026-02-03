@@ -1,8 +1,8 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
-import pedirUnDeseo from '../assets/pedir_un_deseo.JPG';
-import servilletero from '../assets/servilletero.jpg';
-import libelula from '../assets/libelula.jpg';
+import pedirUnDeseo from '../assets/pedir_un_deseo.webp';
+import servilletero from '../assets/servilletero.webp';
+import libelula from '../assets/libelula.webp';
 
 interface Project {
   id: number;
