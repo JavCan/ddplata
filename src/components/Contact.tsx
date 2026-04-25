@@ -2,7 +2,7 @@ import { Mail, Instagram, Linkedin } from 'lucide-react';
 
 export function Contact() {
   return (
-    <section id="contacto" className="px-6 py-16 bg-neutral-100">
+    <section id="contacto" className="px-6 py-16 bg-white">
       <div className="max-w-lg mx-auto w-full text-left">
         <h2 className="text-neutral-900 mb-8">Contacto</h2>
         <div className="space-y-6">
