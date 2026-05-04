@@ -1,8 +1,7 @@
 import { Hero } from './Hero';
-import { About } from './About';
 import { Projects } from './Projects';
-import { Contact } from './Contact';
 import { Footer } from './Footer';
+import { Link } from 'react-router-dom';
 
 export function HomePage() {
   const scrollToSection = (id: string) => {
@@ -15,7 +14,7 @@ export function HomePage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
         <div className="px-12 py-8 flex items-center justify-between max-w-7xl mx-auto">
-          <div className="text-[#a5d6a7] italic font-semibold text-2xl tracking-tighter">ddplata</div>
+          <Link to="/" className="text-[#a5d6a7] italic font-semibold text-2xl tracking-tighter">ddplata</Link>
           <nav>
             <ul className="flex items-center gap-16 text-[15px] text-neutral-900">
               <li>
@@ -27,20 +26,20 @@ export function HomePage() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('proyectos')}
+                <Link
+                  to="/archive"
                   className="hover:text-[#a5d6a7] transition-colors"
                 >
                   archive
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('contacto')}
+                <Link
+                  to="/contact"
                   className="hover:text-[#a5d6a7] transition-colors"
                 >
                   contact
-                </button>
+                </Link>
               </li>
             </ul>
           </nav>
