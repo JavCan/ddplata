@@ -1,5 +1,4 @@
 import pedirUnDeseo1 from '../assets/pedir_un_deseo1.webp';
-import pedirUnDeseo2 from '../assets/pedir_un_deseo2.webp';
 import pedirUnDeseo3 from '../assets/pedir_un_deseo3.webp';
 import pedirUnDeseo4 from '../assets/pedir_un_deseo4.webp';
 import pedirUnDeseo5 from '../assets/pedir_un_deseo5.webp';
@@ -20,7 +19,6 @@ import toko2 from '../assets/toko2.webp';
 import toko3 from '../assets/toko3.webp';
 
 import racejournal1 from '../assets/racejournal1.webp';
-import racejournal2 from '../assets/racejournal2.webp';
 import racejournal3 from '../assets/racejournal3.webp';
 import racejournal4 from '../assets/racejournal4.webp';
 

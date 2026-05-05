@@ -92,7 +92,7 @@ export function Projects() {
                     dragElastic={0}
                     onDragStart={stopAutoRotate}
                     onDragEnd={startAutoRotate}
-                    onDrag={(event, info) => {
+                    onDrag={(_event, info) => {
                         rotateY.set(rotateY.get() + info.delta.x * 0.5);
                     }}
                     style={{

@@ -4,11 +4,6 @@ import { Footer } from './Footer';
 import { Link } from 'react-router-dom';
 
 export function HomePage() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
