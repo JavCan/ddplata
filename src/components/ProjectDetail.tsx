@@ -4,7 +4,7 @@ import { projectDetails } from '../data/projectDetails.ts';
 import { useEffect, useState } from 'react';
 import { ImageModal } from './ImageModal';
 // 1. IMPORTAR el nuevo componente
-import { ProjectDetailBlock } from './ProjectDetailBlock'; 
+import { ProjectDetailBlock } from './ProjectDetailBlock';
 
 export function ProjectDetail() {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ export function ProjectDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageSrc, setSelectedImageSrc] = useState<string | null>(null);
 
@@ -33,7 +33,7 @@ export function ProjectDetail() {
 
   const project = projectDetails.find(p => p.slug === slug);
 
-   const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError(null);
     const name = formData.name.trim();
@@ -62,7 +62,7 @@ export function ProjectDetail() {
         try {
           const data = await res.json();
           if (data?.error) msg = data.error;
-        } catch {}
+        } catch { }
         setSubmitError(msg);
         setIsSubmitting(false);
         return;
@@ -104,8 +104,8 @@ export function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-neutral-50">
-    
-        <ImageModal 
+
+      <ImageModal
         isOpen={isModalOpen}
         imageSrc={selectedImageSrc}
         onClose={closeModal}
@@ -138,9 +138,9 @@ export function ProjectDetail() {
             </div>
           </div>
 
-         {project.blocks.map((block, index) => ( // <-- Aquí defines 'block'
-            <div key={index} className="mb-30"> {/* Agregamos un margen inferior entre bloques */}
-              <ProjectDetailBlock 
+          {project.blocks.map((block, index) => ( // <-- Aquí defines 'block'
+            <div key={index} className="mb-20"> {/* Agregamos un margen inferior entre bloques */}
+              <ProjectDetailBlock
                 description={block.description} // <-- 'block' está definido aquí
                 details={block.details}       // <-- 'block' está definido aquí
                 projectTitle={project.title}
@@ -149,7 +149,7 @@ export function ProjectDetail() {
             </div>
           ))}
 
-          {/* Botón para volver */}
+          {/* Botón para volver 
           <div className="mt-16 text-center">
             <button
               onClick={() => navigate('/')}
@@ -159,6 +159,8 @@ export function ProjectDetail() {
               Volver a proyectos
             </button>
           </div>
+          */}
+
           {/* Formulario de contacto */}
           <div className="mt-16 pt-16 border-t border-neutral-200">
             <div className="text-center mb-6">
@@ -167,7 +169,7 @@ export function ProjectDetail() {
                 Déjanos tus datos y te enviaremos más información sobre especificaciones y disponibilidad.
               </p>
             </div>
-            
+
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
