@@ -18,12 +18,12 @@ export function HomePage() {
           <nav>
             <ul className="flex items-center gap-16 text-[15px] text-neutral-900">
               <li>
-                <button
-                  onClick={() => scrollToSection('inicio')}
+                <Link
+                  to="/about"
                   className="hover:text-[#a5d6a7] transition-colors"
                 >
                   info
-                </button>
+                </Link>
               </li>
               <li>
                 <Link

@@ -109,14 +109,14 @@ export function Contact() {
 
               <div className="max-w-md">
                 <p className="text-[22px] text-neutral-900 leading-snug">
-                  Me gusta saber hacer muchas cosas, y blablablableblebleblublublu me llamo Danna
+                  Soy estudiante de diseño industrial, interesada en desarrollar diseños conscientes, sustentables y con impacto social positivo.
                 </p>
               </div>
 
               <div className="pt-8">
-                <a href="#sobre-mi" className="text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#a5d6a7] transition-colors">
+                <Link to="/about" className="text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#a5d6a7] transition-colors">
                   más sobre mí y mi trayectoria :)
-                </a>
+                </Link>
               </div>
             </div>
 

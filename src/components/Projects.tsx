@@ -1,8 +1,10 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
-import pedirUnDeseo from '../assets/pedir_un_deseo.webp';
+import pedirUnDeseo from '../assets/pedir_un_deseo5.webp';
 import servilletero from '../assets/servilletero.webp';
 import libelula from '../assets/libelula.webp';
+import toko from '../assets/toko1.webp';
+import racejournal from '../assets/racejournal1.webp';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
@@ -39,6 +41,22 @@ const projects: Project[] = [
         category: 'Producto',
         year: '2023',
         image: libelula,
+    },
+    {
+        id: 4,
+        slug: 'toko',
+        title: 'Toko',
+        category: 'Producto',
+        year: '2024',
+        image: toko,
+    },
+    {
+        id: 5,
+        slug: 'race-journal',
+        title: 'Race Journal',
+        category: 'Producto',
+        year: '2024',
+        image: racejournal,
     }
 ];
 
@@ -109,7 +127,7 @@ export function Projects() {
                                     <ImageWithFallback
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                                     />
                                 </div>
                             </Link>
@@ -119,12 +137,12 @@ export function Projects() {
             </div>
             {/* Pink Link */}
             <div className="flex justify-center mb-12 mt-[50px]">
-                <a
-                    href="#"
+                <Link
+                    to="/pedir-un-deseo"
                     className="text-[#ff5c9d] text-2xl font-normal underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity text-center"
                 >
                     Checa mi proyecto que llego al Design Week en Milán!!!
-                </a>
+                </Link>
             </div>
         </section>
     );
