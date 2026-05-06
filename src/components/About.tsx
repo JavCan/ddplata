@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
 import lago from '../assets/lago.webp';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useEffect } from 'react';
 import { Header } from './Header';
+import { useContact } from '../context/ContactContext';
 
 export function About() {
+  const { openContact } = useContact();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,9 +60,12 @@ export function About() {
             </div>
 
             <div className="pt-10">
-              <Link to="/?contact=true" className="text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#a5d6a7] transition-colors">
+              <button 
+                onClick={openContact}
+                className="text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#ff5c9d] transition-colors cursor-pointer"
+              >
                 Contáctame :)
-              </Link>
+              </button>
             </div>
           </div>
 

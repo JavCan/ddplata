@@ -156,7 +156,7 @@ export function ContactOverlay() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="w-full py-4 bg-neutral-900 text-white rounded-xl font-bold text-lg hover:bg-[#a5d6a7] hover:text-neutral-900 transition-all disabled:opacity-50"
+                                    className="w-full py-4 bg-neutral-900 text-white rounded-xl font-bold text-lg hover:bg-[#ff5c9d] hover:text-white transition-all disabled:opacity-50"
                                 >
                                     {loading ? 'Sending...' : 'Send'}
                                 </button>

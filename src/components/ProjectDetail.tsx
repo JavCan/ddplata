@@ -1,10 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import { projectDetails } from '../data/projectDetails.ts';
 import { useEffect, useState } from 'react';
 import { ImageModal } from './ImageModal';
-// 1. IMPORTAR el nuevo componente
 import { ProjectDetailBlock } from './ProjectDetailBlock';
+import { Header } from './Header';
 
 export function ProjectDetail() {
   const { slug } = useParams();
@@ -111,29 +110,15 @@ export function ProjectDetail() {
         onClose={closeModal}
       />
 
-      {/* Header con botón de regreso */}
-      <header className="fixed top-0 left-0 right-0 bg-neutral-50/95 backdrop-blur-sm z-50 border-b border-neutral-200">
-        <div className="px-6 py-4 flex items-center">
-          <button
-            onClick={() => navigate('/')}
-            className="p-2 text-neutral-600 hover:text-neutral-900 transition-colors -ml-2"
-            aria-label="Volver"
-          >
-            <ArrowLeft size={24} />
-          </button>
-          <div className="ml-2 text-neutral-900">Volver</div>
-        </div>
-      </header>
+      <Header />
 
       {/* Contenido del proyecto */}
-      <main className="pt-20 pb-16 px-6">
+      <main className="pt-30 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
           {/* Título y metadata */}
           <div className="mb-8">
-            <h1 className="text-neutral-900 mb-3">{project.title}</h1>
+            <h1 className="text-neutral-900 mb-3 font-bristol text-3xl">{project.title}</h1>
             <div className="flex items-center gap-3 text-neutral-500">
-              <span>{project.category}</span>
-              <span>•</span>
               <span>{project.year}</span>
             </div>
           </div>
@@ -210,7 +195,7 @@ export function ProjectDetail() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-neutral-900 text-white hover:bg-neutral-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-neutral-900 text-white rounded-xl font-bold text-lg hover:bg-[#ff5c9d] hover:text-white transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? 'Enviando...' : 'Solicitar información'}
                 </button>

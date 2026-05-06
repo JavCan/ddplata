@@ -3,7 +3,7 @@ import pedirUnDeseo3 from '../assets/pedir_un_deseo3.webp';
 import pedirUnDeseo4 from '../assets/pedir_un_deseo4.webp';
 import pedirUnDeseo5 from '../assets/pedir_un_deseo5.webp';
 import pedirUnDeseo6 from '../assets/pedir_un_deseo6.webp';
-
+import pedirUnDeseo7 from '../assets/design.webp';
 // Corregido: Ruta a '../assets/' y extensión a .JPEG (Mayúsculas)
 import servilletero1 from '../assets/servilletero1.webp';
 import servilletero2 from '../assets/servilletero2.webp';
@@ -24,7 +24,7 @@ import racejournal4 from '../assets/racejournal4.webp';
 
 // Definición de tipos para los bloques
 interface ProjectBlock {
-    description: string;
+    description?: string;
     details: { image: string }[];
 }
 
@@ -32,11 +32,7 @@ export interface ProjectDetail {
     id: number;
     slug: string;
     title: string;
-    category: string;
     year: string;
-    // La descripción general del proyecto ya no es necesaria aquí, se mueve a los bloques
-    // description: string; 
-    // Ahora usamos un array de bloques
     blocks: ProjectBlock[];
 }
 
@@ -45,7 +41,6 @@ export const projectDetails: ProjectDetail[] = [
         id: 1,
         slug: 'pedir-un-deseo',
         title: 'Pedir Un Deseo',
-        category: 'Producto',
         year: '2025',
         // Estructura con bloques separados
         blocks: [
@@ -68,12 +63,18 @@ export const projectDetails: ProjectDetail[] = [
                 ],
             },
             {
-                description: `Después está nuestro candelabro, elaborado totalmente de aluminio fundido, su propósito es sostener la vela mientras pedimos nuestro deseo.
-
-                            Y por último el apagador, con el cual apagaremos la vela para que su humo lleve nuestro deseo a ser cumplido.`,
+                description: `Después está nuestro candelabro, elaborado totalmente de aluminio fundido, su propósito es sostener la vela mientras pedimos nuestro deseo. Y por último el apagador, con el cual apagaremos la vela para que su humo lleve nuestro deseo a ser cumplido.
+                            
+                            Todos estos objetos se encuentran en un gabinete elaborado de madera de haya, mismo que cuenta con un cajón que contiene un cerillo, el cual utilizarás para prender la vela de tu deseo más especial. `,
                 details: [
                     { image: pedirUnDeseo3 },
                     { image: pedirUnDeseo5 },
+                ],
+            },
+            {
+                description: 'Pedir un deseo ha llegado a foros de diseño muy relevantes como lo es Milan Design Week. Además de haber recibido el Premio Academia en Conclusiones, un evento del Tecnológico de Monterrey que permite destacar los proyectos realizados en el semestre.',
+                details: [
+                    { image: pedirUnDeseo7 }
                 ],
             },
         ],
@@ -82,7 +83,6 @@ export const projectDetails: ProjectDetail[] = [
         id: 2,
         slug: 'amanecer',
         title: 'Amanecer',
-        category: 'Producto',
         year: '2024',
         // Estructura con bloques separados
         blocks: [
@@ -110,16 +110,22 @@ export const projectDetails: ProjectDetail[] = [
         id: 3,
         slug: 'seres-mutantes',
         title: 'Seres Mutantes',
-        category: 'Producto',
         year: '2024',
         // Estructura con bloques separados
         blocks: [
             {
-                description: 'Primera exploración visual del deseo y la luz mediante formas sencillas y materiales honestos.',
+                description: `Primer proyecto realizado dentro de la carrera de Diseño en el Tecnológico de Monterrey.
+
+                Seres mutantes fue un reto en el cual debíamos crear un ser mutante a partir de un animal, planta o insecto de nuestro entorno, para transformarlo en un juguete de madera con ornamentos intercambiables entre otros seres.`,
                 details: [
-                    { image: libelula1 },
-                    { image: libelula2 },
                     { image: libelula3 },
+                ],
+            },
+            {
+                description: 'Para el diseño del ser mutante, me inspiré en las libélulas, insectos que siempre me han fascinado por su belleza y elegancia, estos insectos se encuentran en zonas con cuerpos de agua. Los ornamentos están basados en Xochimilco, incorporando una variedad de colores y formas que evocan la esencia de las trajineras. Además, tomé como referencia especies endémicas de la región, como los ajolotes, para enriquecer la propuesta con elementos representativos de este lugar.',
+                details: [
+                    { image: libelula2 },
+                    { image: libelula1 },
                 ],
             },
         ],
@@ -128,8 +134,7 @@ export const projectDetails: ProjectDetail[] = [
         id: 4,
         slug: 'toko',
         title: 'Toko',
-        category: 'Producto',
-        year: '2024',
+        year: '2026',
         blocks: [
             {
                 description: 'Es un instrumento de percusión pensado a partir de una multiherramienta, creado en el workshop Universo Material.',
@@ -152,8 +157,7 @@ export const projectDetails: ProjectDetail[] = [
         id: 5,
         slug: 'race-journal',
         title: 'Race Journal',
-        category: 'Producto',
-        year: '2024',
+        year: '2025',
         blocks: [
             {
                 description: 'Es una agenda pensada para los fanáticos del automovilismo, la cual les proporciona una forma práctica y divertida de registrar su pasión por la Fórmula 1.',

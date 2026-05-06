@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Header } from './Header';
-import pedirUnDeseo from '../assets/pedir_un_deseo.webp';
-import servilletero from '../assets/servilletero.webp';
 import libelula from '../assets/libelula.webp';
 import pedirUnDeseo1 from '../assets/pedir_un_deseo1.webp';
 import servilletero1 from '../assets/servilletero1.webp';
 import toko1 from '../assets/toko1.webp';
 import racejournal1 from '../assets/racejournal1.webp';
+import performance from '../assets/performance.webp';
+import tallerVertical1 from '../assets/tallerVertical1.webp';
+import memo from '../assets/memo.webp';
+
 import { motion } from 'framer-motion';
 
 const archiveItems = [
@@ -14,31 +16,49 @@ const archiveItems = [
     id: 1,
     slug: 'pedir-un-deseo',
     image: pedirUnDeseo1,
-    style: { top: '25%', left: '15%', width: '220px' }
+    style: { top: '15%', left: '15%', width: '220px' }
   },
   {
     id: 2,
     slug: 'seres-mutantes',
     image: libelula,
-    style: { top: '20%', left: '42%', width: '280px' }
+    style: { top: '10%', left: '42%', width: '280px' }
   },
   {
     id: 3,
     slug: 'amanecer',
     image: servilletero1,
-    style: { top: '35%', left: '68%', width: '260px' }
+    style: { top: '25%', left: '68%', width: '260px' }
   },
   {
     id: 5,
     slug: 'toko',
     image: toko1,
-    style: { top: '60%', left: '40%', width: '260px' }
+    style: { top: '33%', left: '40%', width: '260px' }
   },
   {
     id: 6,
     slug: 'race-journal',
     image: racejournal1,
-    style: { top: '65%', left: '70%', width: '240px' }
+    style: { top: '70%', left: '15%', width: '240px' }
+  },
+  {
+    id: 7,
+    slug: 'performance',
+    image: performance,
+    style: { top: '50%', left: '10%', width: '260px' }
+  },
+  {
+    id: 8,
+    slug: 'taller-vertical',
+    image: tallerVertical1,
+    style: { top: '53%', left: '70%', width: '240px' }
+  },
+  {
+    id: 9,
+    slug: 'memo',
+    image: memo,
+    style: { top: '56%', left: '43%', width: '220px' }
   }
 ];
 
@@ -48,7 +68,7 @@ export function Archive() {
       <Header />
 
       {/* Scattered Projects */}
-      <main className="relative w-full h-screen overflow-hidden pt-24">
+      <main className="relative w-full min-h-[120vh]">
         {archiveItems.map((item) => (
           <motion.div
             key={`${item.id}-${item.slug}`}
