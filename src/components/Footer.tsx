@@ -26,14 +26,14 @@ export function Footer() {
           <a
             href="https://www.instagram.com/ddplata/"
             target="_blank"
-            className="text-neutral-900 hover:opacity-70 transition-opacity"
+            className="text-neutral-900 hover:text-[#a5d6a7] transition-opacity"
           >
             <Instagram size={32} strokeWidth={1.5} />
           </a>
           <a
             href="https://www.linkedin.com/in/dannamiranda/"
             target="_blank"
-            className="text-neutral-900 hover:opacity-70 transition-opacity"
+            className="text-neutral-900 hover:text-[#a5d6a7] transition-opacity"
           >
             <Linkedin size={32} strokeWidth={1.5} />
           </a>
@@ -44,7 +44,7 @@ export function Footer() {
         <div className="flex flex-row justify-between items-baseline w-full">
           <a
             href="mailto:ddplata@outlook.com"
-            className="text-[15px] text-neutral-900 font-medium underline underline-offset-2 decoration-1 hover:opacity-70 transition-opacity"
+            className="text-[15px] text-neutral-900 font-medium underline underline-offset-2 decoration-1 hover:text-[#a5d6a7] transition-opacity"
           >
             ddplata@outlook.com
           </a>

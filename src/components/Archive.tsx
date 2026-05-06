@@ -1,66 +1,51 @@
 import { Link } from 'react-router-dom';
+import { Header } from './Header';
 import pedirUnDeseo from '../assets/pedir_un_deseo.webp';
 import servilletero from '../assets/servilletero.webp';
 import libelula from '../assets/libelula.webp';
 import pedirUnDeseo1 from '../assets/pedir_un_deseo1.webp';
 import servilletero1 from '../assets/servilletero1.webp';
+import toko1 from '../assets/toko1.webp';
+import racejournal1 from '../assets/racejournal1.webp';
 import { motion } from 'framer-motion';
 
 const archiveItems = [
   {
     id: 1,
     slug: 'pedir-un-deseo',
-    image: pedirUnDeseo1, // Top-left-ish (PRODUCE-like position)
-    style: { top: '30%', left: '32%', width: '120px' }
+    image: pedirUnDeseo1,
+    style: { top: '25%', left: '15%', width: '220px' }
   },
   {
     id: 2,
     slug: 'seres-mutantes',
-    image: libelula, // Top-center-ish (Toy position)
-    style: { top: '28%', left: '46%', width: '160px' }
+    image: libelula,
+    style: { top: '20%', left: '42%', width: '280px' }
   },
   {
     id: 3,
     slug: 'amanecer',
-    image: servilletero1, // Center-right-ish (Bowl position)
-    style: { top: '42%', left: '58%', width: '180px' }
-  },
-  {
-    id: 4,
-    slug: 'pedir-un-deseo',
-    image: pedirUnDeseo, // Center-left-ish (Wooden slats position)
-    style: { top: '50%', left: '40%', width: '110px' }
+    image: servilletero1,
+    style: { top: '35%', left: '68%', width: '260px' }
   },
   {
     id: 5,
-    slug: 'amanecer',
-    image: servilletero, // Bottom-center-ish (Box position)
-    style: { top: '55%', left: '50%', width: '140px' }
+    slug: 'toko',
+    image: toko1,
+    style: { top: '60%', left: '40%', width: '260px' }
+  },
+  {
+    id: 6,
+    slug: 'race-journal',
+    image: racejournal1,
+    style: { top: '65%', left: '70%', width: '240px' }
   }
 ];
 
 export function Archive() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
-        <div className="px-12 py-8 flex items-center justify-between max-w-7xl mx-auto">
-          <Link to="/" className="text-[#a5d6a7] italic font-semibold text-2xl tracking-tighter">ddplata</Link>
-          <nav>
-            <ul className="flex items-center gap-16 text-[15px] text-neutral-900">
-              <li>
-                <Link to="/" className="hover:text-[#a5d6a7] transition-colors">info</Link>
-              </li>
-              <li>
-                <Link to="/archive" className="font-bold border-b border-black pb-1">archive</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-[#a5d6a7] transition-colors">contact</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Scattered Projects */}
       <main className="relative w-full h-screen overflow-hidden pt-24">
@@ -75,9 +60,9 @@ export function Archive() {
             whileHover={{ scale: 1.05, zIndex: 10 }}
           >
             <Link to={`/${item.slug}`} className="block">
-              <img 
-                src={item.image} 
-                alt={item.slug} 
+              <img
+                src={item.image}
+                alt={item.slug}
                 className="w-full h-auto object-contain transition-transform duration-300"
               />
             </Link>

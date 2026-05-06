@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Bristol';
+  src: url('../fonts/Bristol.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -121,6 +128,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: Helvetica, Arial, sans-serif;
   --font-mono: Helvetica, Arial, sans-serif;
+  --font-bristol: 'Bristol', sans-serif;
 }
 
 @layer base {

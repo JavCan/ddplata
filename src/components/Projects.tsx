@@ -139,7 +139,7 @@ export function Projects() {
             <div className="flex justify-center mb-12 mt-[50px]">
                 <Link
                     to="/pedir-un-deseo"
-                    className="text-[#ff5c9d] text-2xl font-normal underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity text-center"
+                    className="text-[#ff5c9d] text-2xl font-normal underline underline-offset-4 decoration-1 hover:text-[#a5d6a7] transition-opacity text-center"
                 >
                     Checa mi proyecto que llego al Design Week en Milán!!!
                 </Link>

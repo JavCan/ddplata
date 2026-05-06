@@ -12,8 +12,8 @@ export function Hero() {
         {/* Left Column */}
         <div className="space-y-12">
           <div>
-            <h1 className="text-6xl font-bold text-neutral-900 tracking-tight">
-              yo.
+            <h1 className="text-6xl font-bold text-neutral-900 tracking-tight font-bristol">
+              yo
             </h1>
           </div>
 

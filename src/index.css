@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Bristol';
+  src: url('./fonts/Bristol.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-bristol {
+  font-family: 'Bristol', sans-serif !important;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
