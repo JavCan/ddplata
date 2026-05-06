@@ -3,7 +3,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 // Definir las nuevas props
 interface ProjectDetailBlockProps {
     projectTitle: string; // Título general para los alt texts
-    description: string; // La descripción específica de este bloque
+    description?: string; // La descripción específica de este bloque
     details: { image: string }[]; // Las imágenes de este bloque
     onImageClick: (src: string) => void; // Nueva prop para manejar clics en imágenes
 }
@@ -39,11 +39,13 @@ export function ProjectDetailBlock({ projectTitle, description, details, onImage
                 })}
             </div>
             {/* Usar la descripción específica de este bloque */}
-            <div className="max-w-2xl mx-auto text-center">
-                <p className="whitespace-pre-line text-lg text-neutral-600 leading-relaxed">
-                    {description}
-                </p>
-            </div>
+            {description && (
+                <div className="max-w-2xl mx-auto text-center">
+                    <p className="whitespace-pre-line text-lg text-neutral-600 leading-relaxed">
+                        {description}
+                    </p>
+                </div>
+            )}
         </div>
     );
 }

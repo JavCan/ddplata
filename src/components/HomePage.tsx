@@ -1,7 +1,7 @@
 import { Hero } from './Hero';
 import { Projects } from './Projects';
 import { Footer } from './Footer';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Header } from './Header';
 import { useContact } from '../context/ContactContext';
