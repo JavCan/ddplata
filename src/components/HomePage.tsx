@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Header } from './Header';
 import { useContact } from '../context/ContactContext';
+import { StarBackground } from './StarBackground';
 
 export function HomePage() {
   const location = useLocation();
@@ -21,7 +22,9 @@ export function HomePage() {
   }, [location, navigate, openContact]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent relative">
+      <div className="fixed inset-0 bg-white z-[-10]" />
+      <StarBackground />
       <Header />
 
       {/* Main Content */}

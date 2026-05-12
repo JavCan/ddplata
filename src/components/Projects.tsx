@@ -81,10 +81,10 @@ export function Projects() {
         return () => stopAutoRotate();
     }, []);
 
-    const radius = 350; // Adjusted for a nice layout with 3 items
+    const radius = 370; // Adjusted for a nice layout with 3 items
 
     return (
-        <section id="proyectos" className="py-12 bg-white overflow-hidden min-h-[60vh] flex flex-col items-center justify-center relative">
+        <section id="proyectos" className="py-12 bg-transparent overflow-hidden min-h-[60vh] flex flex-col items-center justify-center relative z-10">
             <div style={{ perspective: "1200px" }} className="flex justify-center items-center mt-8 h-[500px] w-full">
                 <motion.div
                     drag="x"
@@ -139,7 +139,7 @@ export function Projects() {
             <div className="flex justify-center mb-12 mt-[50px]">
                 <Link
                     to="/pedir-un-deseo"
-                    className="text-[#ff5c9d] text-2xl font-normal underline underline-offset-4 decoration-1 hover:text-[#a5d6a7] transition-opacity text-center"
+                    className="text-[#ff5c9d] text-2xl font-normal underline underline-offset-4 decoration-1 hover:text-[#a5d6a7] transition-colors text-center"
                 >
                     Checa mi proyecto que llego al Design Week en Milán!!!
                 </Link>

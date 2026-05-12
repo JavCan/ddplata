@@ -10,6 +10,7 @@ import tallerVertical1 from '../assets/tallerVertical1.webp';
 import memo from '../assets/memo.webp';
 
 import { motion } from 'framer-motion';
+import { StarBackground } from './StarBackground';
 
 const archiveItems = [
   {
@@ -64,11 +65,12 @@ const archiveItems = [
 
 export function Archive() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
+      <StarBackground />
       <Header />
 
       {/* Scattered Projects */}
-      <main className="relative w-full min-h-[120vh]">
+      <main className="relative w-full min-h-[120vh]">http://localhost:5173/race-journal
         {archiveItems.map((item) => (
           <motion.div
             key={`${item.id}-${item.slug}`}
