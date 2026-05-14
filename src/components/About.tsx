@@ -3,25 +3,28 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useEffect } from 'react';
 import { Header } from './Header';
 import { useContact } from '../context/ContactContext';
+import { StarBackground } from './StarBackground';
 
 export function About() {
   const { openContact } = useContact();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent relative">
+      <div className="fixed inset-0 bg-white z-[-10]" />
+      <StarBackground />
       <Header />
 
-      <main className="pt-40 pb-20 px-12 max-w-6xl mx-auto">
+      <main className="pt-40 pb-20 px-12 max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
           {/* Text Column */}
           <div className="md:col-span-7 space-y-8">
-            <h1 className="text-6xl font-bold text-neutral-900 tracking-tight font-bristol">Sobre mí</h1>
+            <h1 className="text-4xl font-bold text-neutral-900 tracking-tight font-bristol">Sobre mí</h1>
 
-            <div className="space-y-6 text-[18px] text-neutral-800 leading-snug max-w-xl">
+            <div className="space-y-6 text-[16px] xs:text-[18px] text-neutral-800 leading-snug max-w-xl">
               <p>
                 Desde muy pequeña estudié en una escuela enfocada en las artes y en crear un vínculo con la naturaleza, el uso de materiales orgánicos y el cuidado del entorno. Aunque no tenía claro que quería ser diseñadora desde chica, todas mis vivencias y aprendizajes, como clases de barro, madera y tejido me trajeron aquí :)
               </p>
@@ -60,9 +63,9 @@ export function About() {
             </div>
 
             <div className="pt-10">
-              <button 
+              <button
                 onClick={openContact}
-                className="text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#ff5c9d] transition-colors cursor-pointer"
+                className="text-base xs:text-lg text-neutral-900 underline decoration-1 underline-offset-4 hover:text-[#ff5c9d] transition-colors cursor-pointer"
               >
                 Contáctame :)
               </button>

@@ -129,6 +129,7 @@
   --font-sans: Helvetica, Arial, sans-serif;
   --font-mono: Helvetica, Arial, sans-serif;
   --font-bristol: 'Bristol', sans-serif;
+  --breakpoint-xs: 480px;
 }
 
 @layer base {

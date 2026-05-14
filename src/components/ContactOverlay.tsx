@@ -93,9 +93,9 @@ export function ContactOverlay() {
                         initial={{ opacity: 0, x: 100, y: -20 }}
                         animate={{ opacity: 1, x: 0, y: 0 }}
                         exit={{ opacity: 0, x: 100, y: -20 }}
-                        className="fixed top-24 right-12 z-[70] w-full max-w-[380px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-3xl overflow-hidden border border-neutral-100 p-8"
+                        className="fixed top-20 right-4 left-4 xs:left-auto xs:right-12 xs:top-24 z-[70] w-auto xs:w-[380px] max-w-[380px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-3xl overflow-hidden border border-neutral-100 p-6 xs:p-8"
                     >
-                        <div className="flex justify-between items-center mb-10">
+                        <div className="flex justify-between items-center mb-6 xs:mb-10">
                             <h2 className="text-2xl font-bold text-neutral-900 font-bristol">Contact</h2>
                             <button
                                 onClick={closeContact}
@@ -107,7 +107,7 @@ export function ContactOverlay() {
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="flex flex-col space-y-10">
+                        <form onSubmit={handleSubmit} className="flex flex-col space-y-6 xs:space-y-10">
                             <div className="relative">
                                 <input
                                     type="email"
@@ -156,7 +156,7 @@ export function ContactOverlay() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="w-full py-4 bg-neutral-900 text-white rounded-xl font-bold text-lg hover:bg-[#ff5c9d] hover:text-white transition-all disabled:opacity-50"
+                                    className="w-full py-3 xs:py-4 bg-neutral-900 text-white rounded-xl font-bold text-base xs:text-lg hover:bg-[#ff5c9d] hover:text-white transition-all disabled:opacity-50"
                                 >
                                     {loading ? 'Sending...' : 'Send'}
                                 </button>
