@@ -3,7 +3,6 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useEffect } from 'react';
 import { Header } from './Header';
 import { useContact } from '../context/ContactContext';
-import { StarBackground } from './StarBackground';
 
 export function About() {
   const { openContact } = useContact();
@@ -15,7 +14,6 @@ export function About() {
   return (
     <div className="min-h-screen bg-transparent relative">
       <div className="fixed inset-0 bg-white z-[-10]" />
-      <StarBackground />
       <Header />
 
       <main className="pt-40 pb-20 px-12 max-w-6xl mx-auto relative z-10">

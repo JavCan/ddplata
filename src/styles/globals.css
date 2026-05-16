@@ -204,3 +204,22 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Custom Scrollbar - Minimalist & Elegant */
+::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}

@@ -41,7 +41,7 @@ export function ProjectDetailBlock({ projectTitle, description, details, onImage
             {/* Usar la descripción específica de este bloque */}
             {description && (
                 <div className="max-w-2xl mx-auto text-center">
-                    <p className="whitespace-pre-line text-lg text-neutral-600 leading-relaxed">
+                    <p className="whitespace-pre-line text-[16px] xs:text-[18px] text-neutral-600 leading-relaxed">
                         {description}
                     </p>
                 </div>

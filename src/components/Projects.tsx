@@ -95,7 +95,7 @@ export function Projects() {
     const containerHeight = isMobile ? 220 : 500;
 
     return (
-        <section id="proyectos" className="pt-4 pb-12 xs:py-12 bg-transparent overflow-hidden min-h-[60vh] flex flex-col items-center justify-center relative z-10">
+        <section id="proyectos" className="pt-4 pb-12 xs:py-2 bg-transparent overflow-hidden min-h-[60vh] flex flex-col items-center justify-center relative z-10">
             <div
                 style={{ perspective: "1200px", height: `${containerHeight}px` }}
                 className="flex justify-center items-center mt-4 xs:mt-8 w-full"

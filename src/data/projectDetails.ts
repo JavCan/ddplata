@@ -21,6 +21,9 @@ import toko3 from '../assets/toko3.webp';
 import racejournal1 from '../assets/racejournal1.webp';
 import racejournal3 from '../assets/racejournal3.webp';
 import racejournal4 from '../assets/racejournal4.webp';
+import performance from '../assets/performance.webp';
+import tallerVertical1 from '../assets/tallerVertical1.webp';
+
 
 // Definición de tipos para los bloques
 interface ProjectBlock {
@@ -175,5 +178,38 @@ export const projectDetails: ProjectDetail[] = [
                 ],
             },
         ],
+    },
+    {
+        id: 7,
+        slug: 'performance',
+        title: 'Crítica a la hiperproductividad',
+        year: '2023',
+        blocks: [
+            {
+                description: `Crítica a siempre tener que hacer más para sentirnos suficientes, a que siempre debemos estar ocupados, crítica a que el cansancio es sinónimo de éxito.
+                
+                En este bloque de activismo trabajamos sobre el derecho al ocio, a permitirnos descansar, a darnos cuenta de que ir a nuestro ritmo no está mal y es sano.`,
+                details: [
+                    { image: performance },
+                ],
+            },
+        ],
+    },
+    {
+        id: 8,
+        slug: 'taller-vertical',
+        title: 'Taller Vertical. Open the hands',
+        year: '2024',
+        blocks: [
+            {
+                description: `Open the hands fue un taller impartido por Elisa Defossez, en el cual tuve oportunidad de participar junto con compañeros de cuarto, sexto y octavo semestre, utilizando el color como una herramienta para construir un objeto que nos evocara sensaciones y recuerdos.
+                
+                Nosotros trabajamos una paleta de colores que nos daba una sensación de calma y suavidad, como resultado tuvimos un asiento que transmitía muy bien la sensación que nos provocaba esa paleta de colores.`,
+                details: [
+                    { image: tallerVertical1 },
+                ],
+            },
+        ],
     }
 ];
+

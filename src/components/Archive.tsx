@@ -33,42 +33,42 @@ const archiveItems = [
     slug: 'amanecer',
     image: servilletero1,
     style: { top: '25%', left: '68%', width: '260px' },
-    styleMobile: { top: '22%', left: '60%', width: '130px' }
+    styleMobile: { top: '25%', left: '60%', width: '130px' }
   },
   {
     id: 5,
     slug: 'toko',
     image: toko1,
     style: { top: '33%', left: '40%', width: '260px' },
-    styleMobile: { top: '33%', left: '30%', width: '130px' }
+    styleMobile: { top: '36%', left: '20%', width: '130px' }
   },
   {
     id: 6,
     slug: 'race-journal',
     image: racejournal1,
-    style: { top: '70%', left: '15%', width: '240px' },
-    styleMobile: { top: '57%', left: '5%', width: '120px' }
+    style: { top: '73%', left: '15%', width: '240px' },
+    styleMobile: { top: '69%', left: '5%', width: '120px' }
   },
   {
     id: 7,
     slug: 'performance',
     image: performance,
     style: { top: '50%', left: '10%', width: '260px' },
-    styleMobile: { top: '43%', left: '5%', width: '130px' }
+    styleMobile: { top: '53%', left: '5%', width: '130px' }
   },
   {
     id: 8,
     slug: 'taller-vertical',
     image: tallerVertical1,
-    style: { top: '53%', left: '70%', width: '240px' },
-    styleMobile: { top: '45%', left: '55%', width: '120px' }
+    style: { top: '56%', left: '70%', width: '240px' },
+    styleMobile: { top: '49%', left: '55%', width: '120px' }
   },
   {
     id: 9,
     slug: 'memo',
     image: memo,
-    style: { top: '56%', left: '43%', width: '220px' },
-    styleMobile: { top: '65%', left: '52%', width: '110px' }
+    style: { top: '59%', left: '43%', width: '220px' },
+    styleMobile: { top: '75%', left: '52%', width: '110px' }
   }
 ];
 
@@ -87,7 +87,7 @@ export function Archive() {
       <StarBackground />
       <Header />
 
-      <main className="relative w-full min-h-[120vh]">
+      <main className="relative w-full min-h-[115vh]">
         {archiveItems.map((item) => {
           const activeStyle = isMobile ? item.styleMobile : item.style;
           return (

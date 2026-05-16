@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import starImg from '../assets/star.webp';
 
 interface Star {
@@ -17,12 +18,17 @@ const TWINKLE_PROBABILITY = 0.7;
 
 export function StarBackground() {
   const [stars, setStars] = useState<Star[]>([]);
+  const { scrollY } = useScroll();
+
+  // Parallax effect: stars move at a fraction of the scroll speed
+  const y = useTransform(scrollY, (value) => value * 0.2);
 
   useEffect(() => {
     // Generate stars using a grid to ensure even distribution
     // Increased grid density for smaller stars
-    const columns = 6;
-    const rows = 4;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const columns = isMobile ? 3 : 6;
+    const rows = isMobile ? 3 : 6;
     const newStars: Star[] = [];
     let id = 0;
 
@@ -49,23 +55,28 @@ export function StarBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-      {stars.map((star) => (
-        <img
-          key={star.id}
-          src={starImg}
-          alt=""
-          className={`absolute opacity-100 ${star.shouldTwinkle ? 'animate-pulse-star' : ''}`}
-          style={{
-            top: star.top,
-            left: star.left,
-            width: `${star.size}px`,
-            height: 'auto',
-            animationDelay: star.shouldTwinkle ? star.delay : undefined,
-            animationDuration: star.shouldTwinkle ? star.duration : undefined,
-          }}
-        />
-      ))}
+    <div className="absolute inset-0 pointer-events-none z-[-1] overflow-hidden">
+      <motion.div
+        style={{ y }}
+        className="relative w-full h-full"
+      >
+        {stars.map((star) => (
+          <img
+            key={star.id}
+            src={starImg}
+            alt=""
+            className={`absolute opacity-100 ${star.shouldTwinkle ? 'animate-pulse-star' : ''}`}
+            style={{
+              top: star.top,
+              left: star.left,
+              width: `${star.size}px`,
+              height: 'auto',
+              animationDelay: star.shouldTwinkle ? star.delay : undefined,
+              animationDuration: star.shouldTwinkle ? star.duration : undefined,
+            }}
+          />
+        ))}
+      </motion.div>
       <style>{`
         @keyframes pulse-star {
           0%, 100% { transform: scale(0.8); opacity: 1; }
